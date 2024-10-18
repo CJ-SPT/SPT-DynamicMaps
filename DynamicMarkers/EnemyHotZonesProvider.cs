@@ -107,7 +107,7 @@ namespace DynamicMaps.DynamicMarkers
 
         public void OnDisable(MapView map)
         {
-            // do nothing
+            TryRemoveMarkers();
         }
 
         private void TryRemoveMarkers()
