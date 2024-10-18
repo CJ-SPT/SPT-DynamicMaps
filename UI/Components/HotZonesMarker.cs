@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DynamicMaps.UI.Components
 {
-    public class HotZonesMarker: MapMarker
+    public class EnemyHotZonesMarker: MapMarker
     {
         private static float _maxCallbackTime = 0.5f;  // how often to call callback in seconds
         private static Vector2 _pivot = new Vector2(0.5f, 0.5f);
@@ -14,16 +14,16 @@ namespace DynamicMaps.UI.Components
 
         private float _callbackTime = _maxCallbackTime;  // make sure to start with a callback
 
-        public static HotZonesMarker Create(GameObject parent, string text, string category, string imagePath, Color color, Vector3 position, 
+        public static EnemyHotZonesMarker Create(GameObject parent, string text, string category, string imagePath, Color color, Vector3 position, 
                                             Vector2 size, float degreesRotation, float scale )
         {
-            var mapMarker = Create<HotZonesMarker>(parent, text, category, imagePath, color, 
+            var mapMarker = Create<EnemyHotZonesMarker>(parent, text, category, imagePath, color, 
                                                     position, size, _pivot, degreesRotation, scale);
 
             return mapMarker;
         }
 
-        public HotZonesMarker()
+        public EnemyHotZonesMarker()
         {
             // Do nothing
         }

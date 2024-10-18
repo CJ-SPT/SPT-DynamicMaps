@@ -778,7 +778,7 @@ namespace DynamicMaps.UI
                 AddRemoveMarkerProvider<HeliCrashMarkerProvider>(Settings.ShowHeliCrashMarker.Value);
             }
             //Enemy Hot Zones
-            AddRemoveMarkerProvider<EnemyHotZonesProvider>(Settings.ShowHotZonesInRaid.Value);
+            AddRemoveMarkerProvider<EnemyHotZonesProvider>(Settings.ShowEnemyHotZonesInRaid.Value);
         }
 
         internal void TryAddPeekComponent(EftBattleUIScreen battleUI)
