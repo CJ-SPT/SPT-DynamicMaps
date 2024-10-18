@@ -171,7 +171,7 @@ namespace DynamicMaps.DynamicMarkers
             }
 
             // set category and color
-            var category = "HotZone";
+            var category = "EnemyHotZone";
             var imagePath = _circleImagePath;
             var color = _scavColor;
 
@@ -187,7 +187,7 @@ namespace DynamicMaps.DynamicMarkers
             var position = MathUtils.ConvertToMapPosition(player.Position);
             
             // try adding marker
-            var marker = _lastMapView.AddHotZonesMarker("HotZone", category, imagePath, color, position,_markerSize,Settings.HotZonesMarkerScale.Value);
+            var marker = _lastMapView.AddHotZonesMarker("EnemyHotZone", category, imagePath, color, position,_markerSize,Settings.HotZonesMarkerScale.Value);
             _playerHotZoneMarkers[player] = marker;
         }
 
