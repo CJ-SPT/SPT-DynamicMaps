@@ -78,6 +78,16 @@ namespace DynamicMaps.Config
         public static ConfigEntry<KeyboardShortcut> ZoomOutMiniMapHotkey;
         
         #endregion
+
+        #region Hot Zones
+
+        public const string EnemyHotZones = "5. Enemey Hot Zones";
+        public static ConfigEntry<bool> ShowHotZonesInRaid;
+        public static ConfigEntry<bool> UnifyZonesColors;
+        public static ConfigEntry<float> HotZonesMarkerScale;
+        public static ConfigEntry<float> HotZonesUpdateIntervall;
+        
+        #endregion
         
         // public static ConfigEntry<KeyboardShortcut> KeyboardShortcut;
 
@@ -499,6 +509,46 @@ namespace DynamicMaps.Config
                     null,
                     new ConfigurationManagerAttributes { })));
             
+            #endregion
+
+            #region Hot Zones
+
+            ConfigEntries.Add(ShowHotZonesInRaid = Config.Bind(
+                EnemyHotZones,
+                "Show Enemy Hot Zones in Raid",
+                false,
+                new ConfigDescription(
+                    "If enemy hot zones should be shown in-raid",
+                    null,
+                    new ConfigurationManagerAttributes { })));
+            
+            ConfigEntries.Add(UnifyZonesColors = Config.Bind(
+                EnemyHotZones,
+                "Unify Zone Colors",
+                true,
+                new ConfigDescription(
+                    "Uses only 1 zone color instead of 3 different for the different enemy types",
+                    null,
+                    new ConfigurationManagerAttributes { })));
+
+            ConfigEntries.Add(HotZonesMarkerScale = Config.Bind(
+                EnemyHotZones,
+                "Scale multiplyier of the Hot Zones",
+                2f,
+                new ConfigDescription(
+                    "How big the Hot Zones should be",
+                    new AcceptableValueRange<float>(0.5f, 4f),
+                    new ConfigurationManagerAttributes { })));
+            
+            ConfigEntries.Add(HotZonesUpdateIntervall = Config.Bind(
+                EnemyHotZones,
+                "Minimap Update Intervall",
+                30f,
+                new ConfigDescription(
+                    "Intervall in which the Hot Zones should be updated. (only needed when displaying the minimap)",
+                    new AcceptableValueRange<float>(15f, 120f),
+                    new ConfigurationManagerAttributes { })));
+                    
             #endregion
             
             RecalcOrder();
