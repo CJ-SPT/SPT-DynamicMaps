@@ -10,7 +10,8 @@
 
 ### Heatmaps
 
-- Heatmap for enemies and loot would be cool
+- ~~Heatmap for enemies~~ and loot would be cool
+- Heatmap added in 0.4.3 by Agent772 (and a lot of help from CJ)
 
 ### Map Markers
 

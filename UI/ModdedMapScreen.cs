@@ -765,6 +765,9 @@ namespace DynamicMaps.UI
                 provider.ShowBossCorpses = Settings.ShowBossCorpsesInRaid.Value;
                 provider.ShowOtherCorpses = Settings.ShowOtherCorpsesInRaid.Value;
             }
+            
+            //Enemy Hot Zones
+            AddRemoveMarkerProvider<EnemyHotZonesProvider>(Settings.ShowEnemyHotZonesInRaid.Value);
         }
 
         internal void TryAddPeekComponent(EftBattleUIScreen battleUI)
