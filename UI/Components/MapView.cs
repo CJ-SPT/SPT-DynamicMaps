@@ -110,7 +110,7 @@ namespace DynamicMaps.UI.Components
                                                 float scale )
         {
             var marker = EnemyHotZonesMarker.Create(MapMarkerContainer, text, category, imagePath, color, position, size, 
-                                                -CoordinateRotation, 2f * scale/ZoomCurrent);
+                                                -CoordinateRotation, 2f * scale);
             AddMapMarker(marker);
             return marker;
         }
