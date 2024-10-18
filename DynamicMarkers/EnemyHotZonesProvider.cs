@@ -29,7 +29,7 @@ namespace DynamicMaps.DynamicMarkers
         private static Vector2 _markerSize = new Vector2(30, 30);
 
         private MapView _lastMapView;
-        private Dictionary<Player, MapMarker> _playerHotZoneMarkers = new Dictionary<Player, MapMarker>();
+        private Dictionary<Player, MapMarker> _enemyHotZoneMarkers = new Dictionary<Player, MapMarker>();
 
         private bool _isMapVisible = false;
         private bool _timerRunning = false;
@@ -68,7 +68,7 @@ namespace DynamicMaps.DynamicMarkers
         {
             while (_timerRunning)
             {
-                yield return new WaitForSeconds(Settings.HotZonesUpdateIntervall.Value);
+                yield return new WaitForSeconds(Settings.EnemyHotZonesUpdateIntervall.Value);
 
                 if (_isMapVisible)
                 {
@@ -98,7 +98,7 @@ namespace DynamicMaps.DynamicMarkers
         {
             _lastMapView = map;
 
-            foreach (var player in _playerHotZoneMarkers.Keys.ToList())
+            foreach (var player in _enemyHotZoneMarkers.Keys.ToList())
             {
                 TryRemoveMarker(player);
                 TryAddMarker(player);
@@ -112,12 +112,12 @@ namespace DynamicMaps.DynamicMarkers
 
         private void TryRemoveMarkers()
         {
-            foreach (var player in _playerHotZoneMarkers.Keys.ToList())
+            foreach (var player in _enemyHotZoneMarkers.Keys.ToList())
             {
                 TryRemoveMarker(player);
             }
 
-            _playerHotZoneMarkers.Clear();
+            _enemyHotZoneMarkers.Clear();
         }
 
         private void TryAddMarkers()
@@ -147,7 +147,7 @@ namespace DynamicMaps.DynamicMarkers
         private void RemoveNonActivePlayers()
         {
             var alivePlayers = new HashSet<Player>(Singleton<GameWorld>.Instance.AllAlivePlayersList);
-            foreach (var player in _playerHotZoneMarkers.Keys.ToList())
+            foreach (var player in _enemyHotZoneMarkers.Keys.ToList())
             {
                 if (player.HasCorpse() || !alivePlayers.Contains(player))
                 {
@@ -165,7 +165,7 @@ namespace DynamicMaps.DynamicMarkers
                 return;
             }
 
-            if (_lastMapView == null || player.IsBTRShooter() || _playerHotZoneMarkers.ContainsKey(player))
+            if (_lastMapView == null || player.IsBTRShooter() || _enemyHotZoneMarkers.ContainsKey(player))
             {
                 return;
             }
@@ -175,11 +175,11 @@ namespace DynamicMaps.DynamicMarkers
             var imagePath = _circleImagePath;
             var color = _scavColor;
 
-            if (player.IsTrackedBoss() || Settings.UnifyZonesColors.Value)
+            if (player.IsTrackedBoss() || Settings.UnifyEnemyZonesColors.Value)
             {
                 color = _bossColor;
             }
-            else if (player.IsPMC()|| Settings.UnifyZonesColors.Value)
+            else if (player.IsPMC()|| Settings.UnifyEnemyZonesColors.Value)
             {
                 color = _enemyPlayerColor;
             }
@@ -187,13 +187,13 @@ namespace DynamicMaps.DynamicMarkers
             var position = MathUtils.ConvertToMapPosition(player.Position);
             
             // try adding marker
-            var marker = _lastMapView.AddHotZonesMarker("EnemyHotZone", category, imagePath, color, position,_markerSize,Settings.HotZonesMarkerScale.Value);
-            _playerHotZoneMarkers[player] = marker;
+            var marker = _lastMapView.AddEnemyHotZonesMarker("EnemyHotZone", category, imagePath, color, position,_markerSize,Settings.EnemyHotZonesMarkerScale.Value);
+            _enemyHotZoneMarkers[player] = marker;
         }
 
         private void RemoveDisabledMarkers()
         {
-            foreach (var player in _playerHotZoneMarkers.Keys.ToList())
+            foreach (var player in _enemyHotZoneMarkers.Keys.ToList())
             {
                     TryRemoveMarker(player);
             }
@@ -201,12 +201,12 @@ namespace DynamicMaps.DynamicMarkers
 
         private void TryRemoveMarker(Player player)
         {
-            if (!_playerHotZoneMarkers.ContainsKey(player))
+            if (!_enemyHotZoneMarkers.ContainsKey(player))
             {
                 return;
             }
-            _playerHotZoneMarkers[player].ContainingMapView.RemoveMapMarker(_playerHotZoneMarkers[player]);
-            _playerHotZoneMarkers.Remove(player);
+            _enemyHotZoneMarkers[player].ContainingMapView.RemoveMapMarker(_enemyHotZoneMarkers[player]);
+            _enemyHotZoneMarkers.Remove(player);
         }
 
         public void OnShowOutOfRaid(MapView map)

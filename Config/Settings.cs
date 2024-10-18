@@ -79,13 +79,13 @@ namespace DynamicMaps.Config
         
         #endregion
 
-        #region Hot Zones
+        #region Enemy Hot Zones
 
         public const string EnemyHotZones = "5. Enemey Hot Zones";
-        public static ConfigEntry<bool> ShowHotZonesInRaid;
-        public static ConfigEntry<bool> UnifyZonesColors;
-        public static ConfigEntry<float> HotZonesMarkerScale;
-        public static ConfigEntry<float> HotZonesUpdateIntervall;
+        public static ConfigEntry<bool> ShowEnemyHotZonesInRaid;
+        public static ConfigEntry<bool> UnifyEnemyZonesColors;
+        public static ConfigEntry<float> EnemyHotZonesMarkerScale;
+        public static ConfigEntry<float> EnemyHotZonesUpdateIntervall;
         
         #endregion
         
@@ -511,9 +511,9 @@ namespace DynamicMaps.Config
             
             #endregion
 
-            #region Hot Zones
+            #region Enemy Hot Zones
 
-            ConfigEntries.Add(ShowHotZonesInRaid = Config.Bind(
+            ConfigEntries.Add(ShowEnemyHotZonesInRaid = Config.Bind(
                 EnemyHotZones,
                 "Show Enemy Hot Zones in Raid",
                 false,
@@ -522,7 +522,7 @@ namespace DynamicMaps.Config
                     null,
                     new ConfigurationManagerAttributes { })));
             
-            ConfigEntries.Add(UnifyZonesColors = Config.Bind(
+            ConfigEntries.Add(UnifyEnemyZonesColors = Config.Bind(
                 EnemyHotZones,
                 "Unify Zone Colors",
                 true,
@@ -531,7 +531,7 @@ namespace DynamicMaps.Config
                     null,
                     new ConfigurationManagerAttributes { })));
 
-            ConfigEntries.Add(HotZonesMarkerScale = Config.Bind(
+            ConfigEntries.Add(EnemyHotZonesMarkerScale = Config.Bind(
                 EnemyHotZones,
                 "Scale multiplyier of the Hot Zones",
                 2f,
@@ -540,7 +540,7 @@ namespace DynamicMaps.Config
                     new AcceptableValueRange<float>(0.5f, 4f),
                     new ConfigurationManagerAttributes { })));
             
-            ConfigEntries.Add(HotZonesUpdateIntervall = Config.Bind(
+            ConfigEntries.Add(EnemyHotZonesUpdateIntervall = Config.Bind(
                 EnemyHotZones,
                 "Minimap Update Intervall",
                 30f,
