@@ -18,7 +18,7 @@ namespace DynamicMaps.UI.Components
                                             Vector2 size, float degreesRotation, float scale )
         {
             var mapMarker = Create<EnemyHotZonesMarker>(parent, text, category, imagePath, color, 
-                                                    position, size, _pivot, degreesRotation, scale);
+                                                    position, size, _pivot, degreesRotation, scale, true, false);
 
             return mapMarker;
         }
