@@ -546,16 +546,16 @@ namespace DynamicMaps.Config
                 "Scale multiplyier of the Hot Zones",
                 2f,
                 new ConfigDescription(
-                    "How big the Hot Zones should be",
+                    "How big the Enemy Hot Zones should be",
                     new AcceptableValueRange<float>(0.5f, 4f),
                     new ConfigurationManagerAttributes { })));
             
             ConfigEntries.Add(EnemyHotZonesUpdateIntervall = Config.Bind(
                 EnemyHotZones,
-                "Minimap Update Intervall",
+                "Enemy Hot Zones Update Intervall",
                 30f,
                 new ConfigDescription(
-                    "Intervall in which the Hot Zones should be updated. (only needed when displaying the minimap)",
+                    "Intervall in which the Hot Zones should be updated.",
                     new AcceptableValueRange<float>(15f, 120f),
                     new ConfigurationManagerAttributes { })));
                     
