@@ -166,15 +166,18 @@ namespace DynamicMaps.UI.Components
 
         public static T Create<T>(GameObject parent, string text, string category, string imageRelativePath, Color color,
                                   Vector3 position, Vector2 size, Vector2 pivot, float degreesRotation, float scale,
-                                  bool showInRaid = true)
+                                  bool showInRaid = true, bool placefakeImage = true)
                             where T : MapMarker
         {
             var go = UIUtils.CreateUIGameObject(parent, $"MapMarker {text}");
 
-            // this is to receive mouse events
-            var fakeImage = go.AddComponent<Image>();
-            fakeImage.color = Color.clear;
-            fakeImage.raycastTarget = true;
+            if (placefakeImage)
+            {
+                // this is to receive mouse events
+                var fakeImage = go.AddComponent<Image>();
+                fakeImage.color = Color.clear;
+                fakeImage.raycastTarget = true;
+            }
 
             var rectTransform = go.GetRectTransform();
             rectTransform.anchoredPosition = position;
