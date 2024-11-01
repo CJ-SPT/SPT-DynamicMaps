@@ -80,7 +80,17 @@ namespace DynamicMaps.Config
         public static ConfigEntry<KeyboardShortcut> ZoomOutMiniMapHotkey;
         
         #endregion
-        // HotZones
+       
+        #region Enemy Hot Zones
+
+        public const string EnemyHotZones = "5. Enemey Hot Zones";
+        public static ConfigEntry<bool> ShowEnemyHotZonesInRaid;
+        public static ConfigEntry<bool> UnifyEnemyZonesColors;
+        public static ConfigEntry<float> EnemyHotZonesMarkerScale;
+        public static ConfigEntry<float> EnemyHotZonesUpdateIntervall;
+        
+        #endregion
+
         #region Externam Mod Support
 
         #region SamSWAT HeliCrash
@@ -88,7 +98,6 @@ namespace DynamicMaps.Config
         public static ConfigEntry<bool> ShowHeliCrashMarker;
         public static ConfigEntry<string> HeliCrashItemID;
         #endregion
-
         #endregion
         
         // public static ConfigEntry<KeyboardShortcut> KeyboardShortcut;
@@ -511,6 +520,46 @@ namespace DynamicMaps.Config
                     null,
                     new ConfigurationManagerAttributes { })));
             
+            #endregion
+
+            #region Enemy Hot Zones
+
+            ConfigEntries.Add(ShowEnemyHotZonesInRaid = Config.Bind(
+                EnemyHotZones,
+                "Show Enemy Hot Zones in Raid",
+                false,
+                new ConfigDescription(
+                    "If enemy hot zones should be shown in-raid",
+                    null,
+                    new ConfigurationManagerAttributes { })));
+            
+            ConfigEntries.Add(UnifyEnemyZonesColors = Config.Bind(
+                EnemyHotZones,
+                "Unify Zone Colors",
+                true,
+                new ConfigDescription(
+                    "Uses only 1 zone color instead of 3 different for the different enemy types",
+                    null,
+                    new ConfigurationManagerAttributes { })));
+
+            ConfigEntries.Add(EnemyHotZonesMarkerScale = Config.Bind(
+                EnemyHotZones,
+                "Scale multiplyier of the Hot Zones",
+                2f,
+                new ConfigDescription(
+                    "How big the Enemy Hot Zones should be",
+                    new AcceptableValueRange<float>(0.5f, 4f),
+                    new ConfigurationManagerAttributes { })));
+            
+            ConfigEntries.Add(EnemyHotZonesUpdateIntervall = Config.Bind(
+                EnemyHotZones,
+                "Enemy Hot Zones Update Intervall",
+                30f,
+                new ConfigDescription(
+                    "Intervall in which the Hot Zones should be updated.",
+                    new AcceptableValueRange<float>(15f, 120f),
+                    new ConfigurationManagerAttributes { })));
+                    
             #endregion
 
             #region ExternalModSupport
