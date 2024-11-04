@@ -94,9 +94,8 @@ namespace DynamicMaps.Config
         #region Externam Mod Support
 
         #region SamSWAT HeliCrash
-        private const string SamSWATTitle = "6. Mini-map";
+        private const string SamSWATTitle = "6. SamSWAT HeliCrash Location";
         public static ConfigEntry<bool> ShowHeliCrashMarker;
-        public static ConfigEntry<string> HeliCrashItemID;
         #endregion
         #endregion
         
