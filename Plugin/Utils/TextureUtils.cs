@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
+using Cysharp.Text;
+using Unity.VectorGraphics;
 using UnityEngine;
 
 namespace DynamicMaps.Utils
@@ -15,10 +17,34 @@ namespace DynamicMaps.Utils
                 return null;
             }
 
-            var tex = new Texture2D(2, 2, TextureFormat.RGBA32, false);
-            tex.LoadImage(File.ReadAllBytes(absolutePath));
-
-            return tex;
+            var text = File.ReadAllText(absolutePath);
+            var sceneInfo = SVGParser.ImportSVG(new StringReader(text));
+            
+            var tessOptions = new VectorUtils.TessellationOptions
+            {
+                StepDistance = 1.0f,
+                MaxCordDeviation = 0.5f,
+                MaxTanAngleDeviation = 0.1f,
+                SamplingStepSize = 0.01f
+            };
+            
+            var sprite = VectorUtils.BuildSprite(
+                VectorUtils.TessellateScene(sceneInfo.Scene, tessOptions), 
+                24f, 
+                VectorUtils.Alignment.Center,
+                Vector2.zero, 
+                16);
+            
+            var mat = new Material(Shader.Find("Unlit/Texture"));
+            var texture = VectorUtils.RenderSpriteToTexture2D(
+                sprite, 
+                (int)sceneInfo.SceneViewport.width, 
+                (int)sceneInfo.SceneViewport.height,
+                mat,
+                1, 
+                false);
+            
+            return texture;
         }
 
         public static Sprite GetOrLoadCachedSprite(string path)

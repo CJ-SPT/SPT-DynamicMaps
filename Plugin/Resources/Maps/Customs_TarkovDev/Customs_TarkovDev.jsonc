@@ -12,7 +12,7 @@
     "Layers": {
         "Underground": {
             "Level": -1,
-            "ImagePath": "Maps/Customs_TarkovDev/Layers/customs_level_-1.png",
+            "ImagePath": "Maps/Customs_TarkovDev/Layers/SVG/customs_level_-1.svg",
             "ImageBounds": {
                 "Min": {"x": -372, "y": -306},
                 "Max": {"x": 698, "y": 235}
@@ -42,7 +42,7 @@
         },
         "Ground Floor": {
             "Level": 0,
-            "ImagePath": "Maps/Customs_TarkovDev/Layers/customs_level_0.png",
+            "ImagePath": "Maps/Customs_TarkovDev/Layers/SVG/customs_level_0.svg",
             "ImageBounds": {
                 "Min": {"x": -372, "y": -306},
                 "Max": {"x": 698, "y": 235}
@@ -56,7 +56,7 @@
         },
         "2nd Floor": {
             "Level": 1,
-            "ImagePath": "Maps/Customs_TarkovDev/Layers/customs_level_1.png",
+            "ImagePath": "Maps/Customs_TarkovDev/Layers/SVG/customs_level_1.svg",
             "ImageBounds": {
                 "Min": {"x": -372, "y": -306},
                 "Max": {"x": 698, "y": 235}
@@ -118,7 +118,7 @@
         },
         "3rd Floor": {
             "Level": 2,
-            "ImagePath": "Maps/Customs_TarkovDev/Layers/customs_level_2.png",
+            "ImagePath": "Maps/Customs_TarkovDev/Layers/SVG/customs_level_2.svg",
             "ImageBounds": {
                 "Min": {"x": -372, "y": -306},
                 "Max": {"x": 698, "y": 235}

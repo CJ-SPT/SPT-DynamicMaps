@@ -12,7 +12,7 @@
     "Layers": {
         "Underground": {
             "Level": -1,
-            "ImagePath": "Maps/Shoreline_TarkovData/Layers/shoreline_layer_-1.png",
+            "ImagePath": "Maps/Shoreline_TarkovData/Layers/SVG/shoreline_layer_-1.svg",
             "ImageBounds": {
                 "Min": {"x": -1060, "y": -415},
                 "Max": {"x": 508, "y": 622}
@@ -30,7 +30,7 @@
         },
         "Ground Floor": {
             "Level": 0,
-            "ImagePath": "Maps/Shoreline_TarkovData/Layers/shoreline_layer_0.png",
+            "ImagePath": "Maps/Shoreline_TarkovData/Layers/SVG/shoreline_layer_0.svg",
             "ImageBounds": {
                 "Min": {"x": -1060, "y": -415},
                 "Max": {"x": 508, "y": 622}
@@ -44,7 +44,7 @@
         },
         "2nd Floor": {
             "Level": 1,
-            "ImagePath": "Maps/Shoreline_TarkovData/Layers/shoreline_layer_1.png",
+            "ImagePath": "Maps/Shoreline_TarkovData/Layers/SVG/shoreline_layer_1.svg",
             "ImageBounds": {
                 "Min": {"x": -1060, "y": -415},
                 "Max": {"x": 508, "y": 622}
@@ -58,7 +58,7 @@
         },
         "3rd Floor": {
             "Level": 2,
-            "ImagePath": "Maps/Shoreline_TarkovData/Layers/shoreline_layer_2.png",
+            "ImagePath": "Maps/Shoreline_TarkovData/Layers/SVG/shoreline_layer_2.svg",
             "ImageBounds": {
                 "Min": {"x": -1060, "y": -415},
                 "Max": {"x": 508, "y": 622}

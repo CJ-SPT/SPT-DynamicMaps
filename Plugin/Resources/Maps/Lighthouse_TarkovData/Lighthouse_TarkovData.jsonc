@@ -12,7 +12,7 @@
     "Layers": {
         "Ground Floor": {
             "Level": 0,
-            "ImagePath": "Maps/Lighthouse_TarkovData/Layers/lighthouse_layer_0.png",
+            "ImagePath": "Maps/Lighthouse_TarkovData/Layers/SVG/lighthouse_layer_0.svg",
             "ImageBounds": {
                 "Min": {"x": -545, "y": -998},
                 "Max": {"x": 512, "y": 721}

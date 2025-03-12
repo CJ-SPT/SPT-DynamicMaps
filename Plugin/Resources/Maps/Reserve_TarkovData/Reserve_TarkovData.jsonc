@@ -12,7 +12,7 @@
     "Layers": {
         "Bunkers": {
             "Level": -1,
-            "ImagePath": "Maps/Reserve_TarkovData/Layers/reserve_layer_-1.png",
+            "ImagePath": "Maps/Reserve_TarkovData/Layers/SVG/reserve_layer_-1.svg",
             "ImageBounds": {
                 "Min": {"x": -303.5, "y": -275},
                 "Max": {"x": 292, "y": 271.5}
@@ -26,7 +26,7 @@
         },
         "Ground Level": {
             "Level": 0,
-            "ImagePath": "Maps/Reserve_TarkovData/Layers/reserve_layer_0.png",
+            "ImagePath": "Maps/Reserve_TarkovData/Layers/SVG/reserve_layer_0.svg",
             "ImageBounds": {
                 "Min": {"x": -303.5, "y": -275},
                 "Max": {"x": 292, "y": 271.5}

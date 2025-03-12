@@ -12,7 +12,7 @@
     "Layers": {
         "Underground": {
             "Level": -1,
-            "ImagePath": "Maps/Streets_TarkovData/Layers/streets_layer_-1.png",
+            "ImagePath": "Maps/Streets_TarkovData/Layers/SVG/streets_layer_-1.svg",
             "ImageBounds": {
                 "Min": {"x": -279, "y": -299},
                 "Max": {"x": 324, "y": 533}
@@ -30,7 +30,7 @@
         },
         "Ground Floor": {
             "Level": 0,
-            "ImagePath": "Maps/Streets_TarkovData/Layers/streets_layer_0.png",
+            "ImagePath": "Maps/Streets_TarkovData/Layers/SVG/streets_layer_0.svg",
             "ImageBounds": {
                 "Min": {"x": -279, "y": -299},
                 "Max": {"x": 324, "y": 533}
@@ -44,7 +44,7 @@
         },
         "2nd Floor": {
             "Level": 1,
-            "ImagePath": "Maps/Streets_TarkovData/Layers/streets_layer_1.png",
+            "ImagePath": "Maps/Streets_TarkovData/Layers/SVG/streets_layer_1.svg",
             "ImageBounds": {
                 "Min": {"x": -279, "y": -299},
                 "Max": {"x": 324, "y": 533}
@@ -170,7 +170,7 @@
         },
         "3rd Floor": {
             "Level": 2,
-            "ImagePath": "Maps/Streets_TarkovData/Layers/streets_layer_2.png",
+            "ImagePath": "Maps/Streets_TarkovData/Layers/SVG/streets_layer_2.svg",
             "ImageBounds": {
                 "Min": {"x": -279, "y": -299},
                 "Max": {"x": 324, "y": 533}
@@ -232,7 +232,7 @@
         },
         "4th Floor": {
             "Level": 3,
-            "ImagePath": "Maps/Streets_TarkovData/Layers/streets_layer_3.png",
+            "ImagePath": "Maps/Streets_TarkovData/Layers/SVG/streets_layer_3.svg",
             "ImageBounds": {
                 "Min": {"x": -279, "y": -299},
                 "Max": {"x": 324, "y": 533}
@@ -266,7 +266,7 @@
         },
         "5th Floor": {
             "Level": 4,
-            "ImagePath": "Maps/Streets_TarkovData/Layers/streets_layer_4.png",
+            "ImagePath": "Maps/Streets_TarkovData/Layers/SVG/streets_layer_4.svg",
             "ImageBounds": {
                 "Min": {"x": -279, "y": -299},
                 "Max": {"x": 324, "y": 533}

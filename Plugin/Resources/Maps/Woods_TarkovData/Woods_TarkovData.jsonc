@@ -12,7 +12,7 @@
     "Layers": {
         "Ground Level": {
             "Level": 0,
-            "ImagePath": "Maps/Woods_TarkovData/Layers/woods_layer_0.png",
+            "ImagePath": "Maps/Woods_TarkovData/Layers/SVG/woods_layer_0.svg",
             "ImageBounds": {
                 "Min": {"x": -756, "y": -915},
                 "Max": {"x": 647, "y": 443}

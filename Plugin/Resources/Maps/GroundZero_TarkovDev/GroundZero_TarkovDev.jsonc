@@ -12,7 +12,7 @@
     "Layers": {
         "Garage": {
             "Level": -1,
-            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/ground_zero_layer_-1.png",
+            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/SVG/ground_zero_layer_-1.svg",
             "ImageBounds": {
                 "Min": {"x": -99, "y": -124},
                 "Max": {"x": 249, "y": 364}
@@ -30,7 +30,7 @@
         },
         "Ground Floor": {
             "Level": 0,
-            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/ground_zero_layer_0.png",
+            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/SVG/ground_zero_layer_0.svg",
             "ImageBounds": {
                 "Min": {"x": -99, "y": -124},
                 "Max": {"x": 249, "y": 364}
@@ -44,7 +44,7 @@
         },
         "2nd Floor": {
             "Level": 1,
-            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/ground_zero_layer_1.png",
+            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/SVG/ground_zero_layer_1.svg",
             "ImageBounds": {
                 "Min": {"x": -99, "y": -124},
                 "Max": {"x": 249, "y": 364}
@@ -62,7 +62,7 @@
         },
         "3rd Floor": {
             "Level": 2,
-            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/ground_zero_layer_2.png",
+            "ImagePath": "Maps/GroundZero_TarkovDev/Layers/SVG/ground_zero_layer_2.svg",
             "ImageBounds": {
                 "Min": {"x": -99, "y": -124},
                 "Max": {"x": 249, "y": 364}
