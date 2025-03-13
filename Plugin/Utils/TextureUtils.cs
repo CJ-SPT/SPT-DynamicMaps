@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using Cysharp.Text;
 using Unity.VectorGraphics;
 using UnityEngine;
 
@@ -10,11 +9,11 @@ namespace DynamicMaps.Utils
     {
         private static Dictionary<string, Sprite> _spriteCache = new Dictionary<string, Sprite>();
 
-        public static Texture2D LoadTexture2DFromPath(string absolutePath)
+        public static (Sprite, SVGParser.SceneInfo) LoadSpriteFromPath(string absolutePath)
         {
-            if (!File.Exists(absolutePath))
+            if (!File.Exists(absolutePath) || !absolutePath.EndsWith(".svg"))
             {
-                return null;
+                return default;
             }
 
             var text = File.ReadAllText(absolutePath);
@@ -22,29 +21,22 @@ namespace DynamicMaps.Utils
             
             var tessOptions = new VectorUtils.TessellationOptions
             {
-                StepDistance = 1.0f,
-                MaxCordDeviation = 0.5f,
-                MaxTanAngleDeviation = 0.1f,
-                SamplingStepSize = 0.01f
+                StepDistance = 10.0f,
+                MaxCordDeviation = float.MaxValue,      // Disables constraints
+                MaxTanAngleDeviation = Mathf.PI/2.0f,   // Disables constraints
+                SamplingStepSize = 0.01f,
             };
             
+            var geometries = VectorUtils.TessellateScene(sceneInfo.Scene, tessOptions, sceneInfo.NodeOpacity);
+            
             var sprite = VectorUtils.BuildSprite(
-                VectorUtils.TessellateScene(sceneInfo.Scene, tessOptions), 
-                24f, 
+                geometries,
+                sceneInfo.SceneViewport.width / sceneInfo.SceneViewport.height, 
                 VectorUtils.Alignment.Center,
-                Vector2.zero, 
-                16);
+                new Vector2(0, 1), 
+                128);
             
-            var mat = new Material(Shader.Find("Unlit/Texture"));
-            var texture = VectorUtils.RenderSpriteToTexture2D(
-                sprite, 
-                (int)sceneInfo.SceneViewport.width, 
-                (int)sceneInfo.SceneViewport.height,
-                mat,
-                1, 
-                false);
-            
-            return texture;
+            return (sprite, sceneInfo);
         }
 
         public static Sprite GetOrLoadCachedSprite(string path)
@@ -55,11 +47,9 @@ namespace DynamicMaps.Utils
             }
 
             var absolutePath = Path.Combine(Plugin.Path, path);
-            var texture = LoadTexture2DFromPath(absolutePath);
-            _spriteCache[path] = Sprite.Create(texture,
-                                               new Rect(0f, 0f, texture.width, texture.height),
-                                               new Vector2(texture.width / 2, texture.height / 2));
+            var scene = LoadSpriteFromPath(absolutePath);
 
+            _spriteCache[path] = scene.Item1;
             return _spriteCache[path];
         }
     }

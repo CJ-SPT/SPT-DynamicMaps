@@ -18,7 +18,7 @@ namespace DynamicMaps.DynamicMarkers
         // TODO: move to config
         private const string _airdropName = "Airdrop";
         private const string _airdropCategory = "Airdrop";
-        private const string _airdropImagePath = "Markers/airdrop.png";
+        private const string _airdropImagePath = "Markers/airdrop.svg";
         private static Vector2 _airdropPivot = new Vector2(0.5f, 0.25f);
         //
 

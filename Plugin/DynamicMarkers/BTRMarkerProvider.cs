@@ -9,7 +9,7 @@ namespace DynamicMaps.DynamicMarkers
     public class BTRMarkerProvider : IDynamicMarkerProvider
     {
         // TODO: move to config
-        private static string _btrIconPath = "Markers/btr.png";
+        private static string _btrIconPath = "Markers/btr.svg";
         private static Vector2 _btrSize = new(45, 45f);
         private static string _btrName = "BTR";
         private static string _btrCategory = "BTR";

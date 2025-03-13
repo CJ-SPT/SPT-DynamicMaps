@@ -13,8 +13,8 @@ namespace DynamicMaps.DynamicMarkers
 {
     public class OtherPlayersMarkerProvider : IDynamicMarkerProvider
     {
-        private const string _arrowImagePath = "Markers/arrow.png";
-        private const string _starImagePath = "Markers/star.png";
+        private const string _arrowImagePath = "Markers/arrow.svg";
+        private const string _starImagePath = "Markers/star.svg";
         
         private const string _friendlyPlayerCategory = "Friendly Player";
         private const string _friendlyPlayerImagePath = _arrowImagePath;

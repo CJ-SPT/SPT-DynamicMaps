@@ -11,7 +11,7 @@ namespace DynamicMaps.DynamicMarkers;
 public class TransitMarkerProvider : IDynamicMarkerProvider
 {
     private const string TransitCategory = "Transit";
-    private const string TransitImagePath = "Markers/transit.png";
+    private const string TransitImagePath = "Markers/transit.svg";
 
     private Dictionary<TransitPoint, MapMarker> _transitMarkers = [];
     

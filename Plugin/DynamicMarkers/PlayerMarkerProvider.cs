@@ -10,7 +10,7 @@ namespace DynamicMaps.DynamicMarkers
     {
         // TODO: move to config
         private const string _playerCategory = "Main Player";
-        private const string _playerImagePath = "Markers/arrow.png";
+        private const string _playerImagePath = "Markers/arrow.svg";
         //
 
         private PlayerMapMarker _playerMarker;

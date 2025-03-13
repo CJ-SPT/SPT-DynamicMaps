@@ -15,7 +15,7 @@ namespace DynamicMaps.DynamicMarkers
     {
         // TODO: move to config
         private const string _extractCategory = "Extract";
-        private const string _extractImagePath = "Markers/exit.png";
+        private const string _extractImagePath = "Markers/exit.svg";
         //
 
         private bool _showExtractStatusInRaid = true;

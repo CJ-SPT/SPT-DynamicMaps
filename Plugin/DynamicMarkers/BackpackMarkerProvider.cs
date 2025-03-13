@@ -17,7 +17,7 @@ namespace DynamicMaps.DynamicMarkers
     {
         // TODO: move to config
         private const string _backpackCategory = "Backpack";
-        private const string _backpackImagePath = "Markers/backpack.png";
+        private const string _backpackImagePath = "Markers/backpack.svg";
         private static Vector2 _backpackSize = new Vector2(30f, 30f);
         //
 

@@ -13,7 +13,7 @@ public class HiddenStashMarkerProvider : IDynamicMarkerProvider
 {
     private MapView _lastMapView;
     private Dictionary<LootableContainer, MapMarker> _stashMarkers = [];
-    private const string _hiddenCacheImagePath = "Markers/barrel.png";
+    private const string _hiddenCacheImagePath = "Markers/barrel.svg";
     
     public void OnShowInRaid(MapView map)
     {

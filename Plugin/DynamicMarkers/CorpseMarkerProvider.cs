@@ -13,7 +13,7 @@ namespace DynamicMaps.DynamicMarkers
 {
     public class CorpseMarkerProvider : IDynamicMarkerProvider
     {
-        private const string _skullImagePath = "Markers/skull.png";
+        private const string _skullImagePath = "Markers/skull.svg";
 
         // TODO: move to config
         private const string _friendlyCorpseCategory = "Friendly Corpse";

@@ -10,8 +10,8 @@ namespace DynamicMaps.DynamicMarkers
     public class LockedDoorMarkerMutator : IDynamicMarkerProvider
     {
         // FIXME: move to configuration somehow
-        private static string doorWithKeyPath = Path.Combine(Plugin.Path, "Markers/door_with_key.png");
-        private static string doorWithLockPath = Path.Combine(Plugin.Path, "Markers/door_with_lock.png");
+        private static string doorWithKeyPath = Path.Combine(Plugin.Path, "Markers/door_with_key.svg");
+        private static string doorWithLockPath = Path.Combine(Plugin.Path, "Markers/door_with_lock.svg");
 
         public void OnShowInRaid(MapView map)
         {
