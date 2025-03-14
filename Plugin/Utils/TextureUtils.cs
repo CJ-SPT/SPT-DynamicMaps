@@ -9,7 +9,7 @@ namespace DynamicMaps.Utils
     {
         private static Dictionary<string, Sprite> _spriteCache = new Dictionary<string, Sprite>();
 
-        public static (Sprite, SVGParser.SceneInfo) LoadSpriteFromPath(string absolutePath)
+        public static Sprite LoadSpriteFromPath(string absolutePath)
         {
             if (!File.Exists(absolutePath) || !absolutePath.EndsWith(".svg"))
             {
@@ -21,35 +21,34 @@ namespace DynamicMaps.Utils
             
             var tessOptions = new VectorUtils.TessellationOptions
             {
-                StepDistance = 10.0f,
-                MaxCordDeviation = float.MaxValue,      // Disables constraints
-                MaxTanAngleDeviation = Mathf.PI/2.0f,   // Disables constraints
-                SamplingStepSize = 0.01f,
+                StepDistance = 10f,
+                SamplingStepSize = 100f,
+                MaxCordDeviation = 0.5f,
+                MaxTanAngleDeviation = 0.1f,
             };
             
             var geometries = VectorUtils.TessellateScene(sceneInfo.Scene, tessOptions, sceneInfo.NodeOpacity);
             
             var sprite = VectorUtils.BuildSprite(
                 geometries,
-                sceneInfo.SceneViewport.width / sceneInfo.SceneViewport.height, 
-                VectorUtils.Alignment.Center,
-                new Vector2(0, 1), 
+                300, 
+                VectorUtils.Alignment.Custom,
+                Vector2.zero, 
                 128);
             
-            return (sprite, sceneInfo);
+            return sprite;
         }
 
         public static Sprite GetOrLoadCachedSprite(string path)
         {
-            if (_spriteCache.ContainsKey(path))
+            if (_spriteCache.TryGetValue(path, out var sprite))
             {
-                return _spriteCache[path];
+                return sprite;
             }
 
             var absolutePath = Path.Combine(Plugin.Path, path);
-            var scene = LoadSpriteFromPath(absolutePath);
-
-            _spriteCache[path] = scene.Item1;
+            
+            _spriteCache[path] = LoadSpriteFromPath(absolutePath);
             return _spriteCache[path];
         }
     }
